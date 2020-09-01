@@ -1,0 +1,15 @@
+{
+    "architecture": [
+        "dwg",
+        "3dm",
+        "psd",
+        "ai",
+        "indd"
+    ],
+    "python_project": [
+        "py",
+        "json",
+        "md",
+        "jpg"
+    ]
+}
