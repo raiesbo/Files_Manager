@@ -19,9 +19,17 @@ class Folder:
         pass
 
     def new_folders(self):
-        for extention in extensions["python_project"]:
-            if extention not in self.files:
-                os.mkdir(direc + "\\" + extention)
+        for extension in extensions["python_project"]:
+            if extension not in self.files:
+                os.mkdir(direc + "\\" + extension)
+
+    def re_locate(self):
+        for file in self.files:
+            file_list = file.rsplit('.', 1)
+            print(file_list)
+            for extension in extensions["python_project"]:
+                if file_list[1].lower() == extension:
+                    os.rename(direc + "\\" + file, direc + "\\" + extension + "\\" + file)
 
 
 folder1 = Folder("Master_Class", direc)
@@ -29,6 +37,8 @@ folder1 = Folder("Master_Class", direc)
 print(folder1.files)
 
 folder1.new_folders()
+
+folder1.re_locate()
 
 
 
