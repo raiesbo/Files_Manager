@@ -26,10 +26,10 @@ class Folder:
     def re_locate(self):
         for file in self.files:
             file_list = file.rsplit('.', 1)
-            print(file_list)
-            for extension in extensions["python_project"]:
-                if file_list[1].lower() == extension:
-                    os.rename(direc + "\\" + file, direc + "\\" + extension + "\\" + file)
+            if len(file_list) == 2:
+                for extension in extensions["python_project"]:
+                    if file_list[1].lower() == extension:
+                        os.rename(direc + "\\" + file, direc + "\\" + extension + "\\" + file)
 
 
 folder1 = Folder("Master_Class", direc)
